@@ -1,0 +1,28 @@
+## question 1
+
+mv data-shell.zip ../desktop
+unzip data-shell.zip
+
+cd data-shell
+for file in *.*
+do
+  echo "${file##*.}"
+  
+done
+
+## question 2
+
+ls -lt ## sorted according to the last modification date
+
+
+## question 3
+touch sorted.txt ## not needed
+for file in *.pdb
+do
+  echo "$file" >> sorted.txt
+  tail -n 4 $file >> sorted.txt
+  echo " " >> sorted.txt  ## separating each 4 rows with spaces
+  echo " " >> sorted.txt
+done
+
+## question 4
