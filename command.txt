@@ -1,4 +1,4 @@
-## question 1
+## Question 1
 
 mv data-shell.zip ../desktop
 unzip data-shell.zip
@@ -10,23 +10,29 @@ do
   
 done
 
-## question 2
-
+## Question 2
 ls -lt ## sorted according to the last modification date
 
 
-## question 3
-touch sorted.txt ## not needed
-arr=()
-for file in *.pdb
+## Question 3
+cd molecules
+wc -c *pdb | sort -n | tail -4 > sorted.txt ## 
+cat sorted.txt  ## display all sorted files
+
+## Question 4
+cd creatures
+wc -w * | sort -n | head -n 2 ## list 2 files with least words
+
+## Question 5
+cd molecules
+for file in o* ## list of file that start with O
 do
-  arr[] = $file
-  echo "$file" >> sorted.txt
-  tail -n 4 $file >> sorted.txt
-  echo " " >> sorted.txt  ## separating each 4 rows with spaces
-  echo " " >> sorted.txt
+  ls $file
 done
 
-wc -c *pdb | sort -n | tail -4 > sorted.txt
+## Question 6 && 7
+species.sh
 
-## question 4
+## question 8
+question8.sh
+
