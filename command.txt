@@ -17,12 +17,16 @@ ls -lt ## sorted according to the last modification date
 
 ## question 3
 touch sorted.txt ## not needed
+arr=()
 for file in *.pdb
 do
+  arr[] = $file
   echo "$file" >> sorted.txt
   tail -n 4 $file >> sorted.txt
   echo " " >> sorted.txt  ## separating each 4 rows with spaces
   echo " " >> sorted.txt
 done
+
+wc -c *pdb | sort -n | tail -4 > sorted.txt
 
 ## question 4
